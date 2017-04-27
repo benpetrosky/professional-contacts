@@ -1,4 +1,4 @@
-class ContactInfo
+class Info
 @@contact_info = []
   define_method(:initialize) do |setting, number, email, address|
     @setting = setting

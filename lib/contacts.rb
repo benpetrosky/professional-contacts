@@ -4,7 +4,7 @@ class Contact
   define_method(:initialize) do |name, contact_info|
     @name = name
     @id = @@contacts.length().+(1)
-    @contact_info = []
+    @contact_info = contact_info
   end
   define_method(:add_contact_info) do |contact_info|
     @contact_info.push(contact_info)
@@ -12,14 +12,8 @@ class Contact
   define_method(:name) do
     @name
   end
-  define_method(:numbers) do
-    @numbers
-  end
-  define_method(:emails) do
-    @emails
-  end
-  define_method(:addresses) do
-    @addresses
+  define_method(:contact_info) do
+    @contact_info
   end
   define_method(:save) do
     @@contacts.push(self)

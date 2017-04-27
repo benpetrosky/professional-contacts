@@ -2,8 +2,7 @@
 
 <ul>
   <% @contacts.each() do |contact| %>
-  <li><a href=""> <%= contact.name()%></a></li>
-  <!-- Loop through contacts and show name (link with id) -->
+  <li><a href="/contact_info/<%= contact.id() %>"> <%= contact.name()%></a></li>
   <% end %>
 </ul>
 

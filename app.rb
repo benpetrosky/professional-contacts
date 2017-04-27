@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/contacts')
+require('./lib/contact_info')
 
 get('/') do
   @contacts = Contact.all()
@@ -14,8 +15,13 @@ post('/') do
   numbers = params.fetch("numbers")
   emails = params.fetch("emails")
   addresses = params.fetch("addresses")
-  Contact.new(name, numbers, emails, addresses).save()
+  contact_info = Info.new('first', numbers, emails, addresses)
+  Contact.new(name, contact_info).save()
   erb(:index)
+end
+get ('/contact_info/:id') do
+  @contact = Contact.find(params.fetch("id").to_i)
+  erb(:contact_info)
 end
 
 get('/form') do
