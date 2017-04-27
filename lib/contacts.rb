@@ -1,7 +1,9 @@
 class Contact
   @@contacts = []
 
-  define_method(:initialize) do |name, contact_info|
+  define_method(:initialize) do |name, contact_info| #|attributes|
+    #@name = attributes.fetch(:name)
+    
     @name = name
     @id = @@contacts.length().+(1)
     @contact_info = contact_info

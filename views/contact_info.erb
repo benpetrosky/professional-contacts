@@ -3,6 +3,7 @@
 
 <h1><%= @contact.name()%></h1>
 <ul>
+  <li><%= @contact.contact_info().setting()%></li>
   <li><%= @contact.contact_info().number()%></li>
   <li><%= @contact.contact_info().email()%></li>
   <li><%= @contact.contact_info().address()%></li>

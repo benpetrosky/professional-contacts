@@ -15,7 +15,7 @@ post('/') do
   numbers = params.fetch("numbers")
   emails = params.fetch("emails")
   addresses = params.fetch("addresses")
-  contact_info = Info.new('first', numbers, emails, addresses)
+  contact_info = Info.new({:setting => 'first', :number => numbers, :email => emails, :address => addresses})
   Contact.new(name, contact_info).save()
   erb(:index)
 end
