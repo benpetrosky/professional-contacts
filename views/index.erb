@@ -1,0 +1,10 @@
+<h1>Contact List</h1>
+
+<ul>
+  <% @contacts.each() do |contact| %>
+  <li><a href=""> <%= contact.name()%></a></li>
+  <!-- Loop through contacts and show name (link with id) -->
+  <% end %>
+</ul>
+
+<a href="/form"><button type="button" name="button" class="btn btn-success">Add New Contact</button></a>
