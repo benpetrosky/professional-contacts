@@ -1,14 +1,14 @@
 class Contact
   @@contacts = []
 
-  define_method(:initialize) do |name, numbers, emails, addresses|
+  define_method(:initialize) do |name, contact_info|
     @name = name
-    @numbers = numbers
-    @emails = emails
-    @addresses = addresses
     @id = @@contacts.length().+(1)
+    @contact_info = []
   end
-
+  define_method(:add_contact_info) do |contact_info|
+    @contact_info.push(contact_info)
+  end
   define_method(:name) do
     @name
   end
